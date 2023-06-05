@@ -9,6 +9,7 @@ import by.morunov.socialnetwork.repository.InviteRepo;
 import by.morunov.socialnetwork.repository.UserRepo;
 import by.morunov.socialnetwork.util.InviteDtoConverter;
 import by.morunov.socialnetwork.util.UserDTOConverter;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +20,7 @@ import java.util.stream.Collectors;
  * @author Alex Morunov
  */
 @Service
+@Transactional
 @RequiredArgsConstructor
 public class UserServiceImplements {
 
