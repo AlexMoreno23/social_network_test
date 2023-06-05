@@ -30,6 +30,12 @@ public class PostController {
         return new ResponseEntity<>(postDtos, HttpStatus.OK);
     }
 
+    @GetMapping
+    public ResponseEntity<List<List<PostDto>>> getAllSubscribersPosts(@AuthenticationPrincipal User author){
+        List<List<PostDto>> postDtos = postService.getAllSubscribersPosts(author.getId());
+        return new ResponseEntity<>(postDtos, HttpStatus.OK);
+    }
+
     @PostMapping
     public ResponseEntity<Post> addPost(@AuthenticationPrincipal User user,
             @RequestBody Post post){
@@ -37,5 +43,7 @@ public class PostController {
         postService.addPost(post);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
+
+
 
 }
