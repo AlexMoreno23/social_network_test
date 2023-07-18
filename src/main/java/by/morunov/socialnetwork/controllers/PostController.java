@@ -18,19 +18,19 @@ import java.util.List;
  */
 @RestController
 @PreAuthorize("hasRole('USER')")
-@RequestMapping("/api/v1/home/post")
+@RequestMapping("/api/v1/home")
 @RequiredArgsConstructor
 public class PostController {
 
     private final PostServiceImplements postService;
 
-    @GetMapping
+    @GetMapping("/my-posts")
     public ResponseEntity<List<PostDto>> getAllPosts(@AuthenticationPrincipal User author){
         List<PostDto> postDtos = postService.getAllPostsByAuthor(author);
         return new ResponseEntity<>(postDtos, HttpStatus.OK);
     }
 
-    @GetMapping
+    @GetMapping("/posts")
     public ResponseEntity<List<List<PostDto>>> getAllSubscribersPosts(@AuthenticationPrincipal User author){
         List<List<PostDto>> postDtos = postService.getAllSubscribersPosts(author.getId());
         return new ResponseEntity<>(postDtos, HttpStatus.OK);

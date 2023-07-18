@@ -4,6 +4,12 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 .mvn
+src/main/java/by/morunov/socialnetwork/controllers
+src/main/java/by/morunov/socialnetwork/exceptions
+src/main/java/by/morunov/socialnetwork/service
+src/main/java/by/morunov/socialnetwork/util
+src/main/java/by/morunov/socialnetwork/model/dto
+src/test
 mvnw
 mvnw.cmd
 ### STS ###
